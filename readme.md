@@ -23,9 +23,9 @@ or the dependencies
 6. For convenience, put the script somewhere in your system path.
 
 ## Usage
-Run the `split\_manga\_pages.py` script, supplying a directory of image files to convert
+Run the `split_manga_pages.py` script, supplying a directory of image files to convert
 to single-page layout, for example:
-`split-manga-pages -d /path/to/manga/name_of_manga`.
+`python3 split_manga_pages.py -d /path/to/manga/name_of_manga`.
 The script assumes your images are named with numbers at the end,
 for example
 `name_of_manga_0034.png`. That image will be split into two files named
