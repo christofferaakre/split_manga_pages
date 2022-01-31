@@ -23,7 +23,7 @@ def split_manga_pages(directory: str) -> None:
     save_directory = path / 'split_manga_pages'
     save_directory.mkdir(exist_ok=True)
 
-    files = sorted(list(p for p in path.glob('**/*') if p.suffix in EXTENSIONS))
+    files = sorted(list(p for p in path.glob('**/*') if p.suffix in EXTENSIONS and p.parents[0] != save_directory))
     for file in files:
         # get filename without suffix
         filename = file.stem

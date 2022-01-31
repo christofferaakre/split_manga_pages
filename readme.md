@@ -1,1 +1,1 @@
-# single
+# split-manga-pages
