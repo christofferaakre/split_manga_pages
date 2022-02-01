@@ -30,7 +30,9 @@ arguments.
 |:-:|---|---|
 | `-d DIR, --directory DIR`  | yes |  Directory containing the image files |
 | `-m, --mode`  | yes |  The mode to be used. See [Modes](#modes)|
+| `-nk, --no-keep`  | no | Don't keep the original double page spreads when using detect mode |
 | `-h, --help`  | no | Show help and options for the script |
+
 ### Modes
 Support modes are `'all'` and `'detect'`.
 #### `'all'`
