@@ -16,7 +16,8 @@ while the Python script starts instantly, and you can also easily modify
     the script yourself without having to rebuild if you know some
     Python.
 ### Instructions for downloading python script
-*These steps are not requried if you download the executable from Releases or build from source*
+**These steps are not requried if you download the executable from Releases or build from source**<br>
+
 0. Make sure you have python installed:
     1. Open a terminal
     2. Try to run `python3` and `python`
