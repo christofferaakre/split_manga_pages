@@ -6,11 +6,11 @@ small screens, such as those found on mobile devices
 
 ## Installation
 To install, you can download the newest executable
-version from the [Releases](https://github.com/christofferaakre/split_manga_pages/releases) section
+version for your operating system from the [Releases](https://github.com/christofferaakre/split_manga_pages/releases) section
 (recommended for non-tech savvy people). Alterantively,
 you can build it from source yourself, following the
 [Build Instructions](#Build-instructions) section below. Or, you can follow the instructions just
-below to run the Python script. The advantage of doing this
+below to download and run the Python script (cross-platform). The advantage of doing this
 is that the executable takes can take 1-2 seconds to start up
 while the Python script starts instantly, and you can also easily modify
     the script yourself without having to rebuild if you know some
