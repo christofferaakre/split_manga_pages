@@ -15,8 +15,8 @@ is that the executable takes can take 1-2 seconds to start up
 while the Python script starts instantly, and you can also easily modify
     the script yourself without having to rebuild if you know some
     Python.
-### Instructions for download python script
-    **These steps are not requried if you download the executable from Releases or build from source**
+### Instructions for downloading python script
+    *These steps are not requried if you download the executable from Releases or build from source*
 0. Make sure you have python installed:
     1. Open a terminal
     2. Try to run `python3` and `python`
