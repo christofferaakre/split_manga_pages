@@ -5,6 +5,17 @@ to single-page layout. This can make it much easier to read said manga on
 small screens, such as those found on mobile devices
 
 ## Installation
+To install, you can download the newest executable
+version from the Releases section
+(recommended for non-tech savvy people). Alterantively,
+you can build it from source yourself, following the
+[Build Instructions](#Build-instructions) section below. Or, you can follow the instructions just
+below to run the Python script. The advantage of doing this
+is that the executable takes can take 1-2 seconds to start up
+while the Python script starts instantly, and you can also easily modify
+    the script yourself without having to rebuild if you know some
+    Python.
+
 0. Make sure you have python installed:
     1. Open a terminal
     2. Try to run `python3` and `python`
@@ -25,7 +36,7 @@ or the dependencies
 ## Usage
 Call the script with `python3` and supply the necessary command line
 arguments.
-###Command line arguments
+### Command line arguments
 | Argument  |  Required | Description |
 |:-:|---|---|
 | `-d DIR, --directory DIR`  | yes |  Directory containing the image files |
@@ -63,3 +74,12 @@ I run
 `python3 split_manga_pages.py -d manga -m detect`, and now in the `manga` folder
 I will find files
 `page001.png`, `page002.png`, `page002part1.png`, `page002part2.png`, `page003.png`.
+
+
+## Build instructions
+1. Clone repository and `cd` into it
+2. run `pyinstaller --onefile split-manga-pages.py`
+3. The executable should be placed in the `dist` folder
+
+Note that `pyinstaller` only builds executables for the current
+operating system you are on.

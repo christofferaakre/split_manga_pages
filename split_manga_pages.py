@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sys
 import argparse
 import pathlib
 import statistics
@@ -36,7 +37,7 @@ def main():
     no_keep = args.no_keep
     if not directory or not mode:
         parser.print_usage()
-        exit(1)
+        sys.exit(1)
 
     print(no_keep)
     split_manga_pages(directory, mode, no_keep)
