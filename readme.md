@@ -6,7 +6,7 @@ small screens, such as those found on mobile devices
 
 ## Installation
 To install, you can download the newest executable
-version from the Releases section
+version from the [Releases](https://github.com/christofferaakre/split_manga_pages/releases) section
 (recommended for non-tech savvy people). Alterantively,
 you can build it from source yourself, following the
 [Build Instructions](#Build-instructions) section below. Or, you can follow the instructions just
