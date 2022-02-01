@@ -1,2 +1,5 @@
+altgraph==0.17.2
 numpy==1.22.1
 opencv-python==4.5.5.62
+pyinstaller==4.8
+pyinstaller-hooks-contrib==2022.0
