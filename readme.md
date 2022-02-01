@@ -34,8 +34,7 @@ or the dependencies
 6. For convenience, put the script somewhere in your system path.
 
 ## Usage
-Call the script with `python3` and supply the necessary command line
-arguments.
+Run the executable from the command line with the appropriate command line arguments
 ### Command line arguments
 | Argument  |  Required | Description |
 |:-:|---|---|
@@ -43,7 +42,6 @@ arguments.
 | `-m, --mode`  | yes |  The mode to be used. See [Modes](#modes)|
 | `-nk, --no-keep`  | no | Don't keep the original double page spreads when using detect mode |
 | `-h, --help`  | no | Show help and options for the script |
-
 ### Modes
 Support modes are `'all'` and `'detect'`.
 #### `'all'`
@@ -74,7 +72,6 @@ I run
 `python3 split_manga_pages.py -d manga -m detect`, and now in the `manga` folder
 I will find files
 `page001.png`, `page002.png`, `page002part1.png`, `page002part2.png`, `page003.png`.
-
 
 ## Build instructions
 1. Clone repository and `cd` into it
