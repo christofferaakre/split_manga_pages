@@ -23,11 +23,41 @@ or the dependencies
 6. For convenience, put the script somewhere in your system path.
 
 ## Usage
-Run the `split_manga_pages.py` script, supplying a directory of image files to convert
-to single-page layout, for example:
-`python3 split_manga_pages.py -d /path/to/manga/name_of_manga`.
-The script assumes your images are named with numbers at the end,
-for example
-`name_of_manga_0034.png`. That image will be split into two files named
-`name_of_manga_0034_1.png` and `name_of_manga_0034_2.png`.
-The files will be placed in a directory called `split_manga_pages`.
+Call the script with `python3` and supply the necessary command line
+arguments.
+###Command line arguments
+| Argument  |  Required | Description |
+|:-:|---|---|
+| `-d DIR, --directory DIR`  | yes |  Directory containing the image files |
+| `-m, --mode`  | yes |  The mode to be used. See [Modes](#modes)|
+| `-h, --help`  | no | Show help and options for the script |
+### Modes
+Support modes are `'all'` and `'detect'`.
+#### `'all'`
+Treats all images in the directory as double page spreads. Converts
+them all to single page layouts, i.e. you get twice as many images as you had,
+and these are put in a directory called `split_manga_pages`.
+#### `'detect'`
+Uses the resolutions of the images and some simple statistical analysis
+to determine which images are single page spreads and which are double page. Then
+splits only the double page images into single page images, and also keeps the
+original double page image, so you get the original doble page image followed
+by the two single page images. Images are placed in the orginal directory.
+
+### Example
+#### Mode 'all'
+I have a folder called `manga` containing only double page images
+with names `page001.png`, `page002.png`, etc.
+I run `python3 split_manga_pages.py -d manga -m all`, and I get
+a new folder called `split_manga_pages` containing files
+`page001part1.png1`, `page001part2.png`, `page002part1.png`, `page002part2.png`, etc.
+
+#### Mode 'detect'
+I have a folder called `manga` containing mostly single page images,
+but every so often there is a double page spread. For example,
+there are files `page001.png`, `page002.png`, and `page003.png`.
+`page002` is a double spread, whereas the other two are sinlge spread.
+I run
+`python3 split_manga_pages.py -d manga -m detect`, and now in the `manga` folder
+I will find files
+`page001.png`, `page002.png`, `page002part1.png`, `page002part2.png`, `page003.png`.
