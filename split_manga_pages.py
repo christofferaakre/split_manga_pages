@@ -28,23 +28,27 @@ def main():
     parser = argparse.ArgumentParser(description="Command line utility to split double page manga into single page")
     parser.add_argument('-d', '--directory', help="Directory containig image files to split")
     parser.add_argument('-m', '--mode', help=MODE_HELP, choices=[MODE_ALL, MODE_DETECT])
+    parser.add_argument('-nk', '--no-keep', help="When using the 'detect' mode, do not keep the double page spreads", action='store_true', dest="no_keep")
     args =  parser.parse_args()
 
     directory = args.directory
     mode = args.mode
+    no_keep = args.no_keep
     if not directory or not mode:
         parser.print_usage()
         exit(1)
 
-    split_manga_pages(directory, mode)
+    print(no_keep)
+    split_manga_pages(directory, mode, no_keep)
 
-def split_manga_pages(directory: str, mode: str) -> None:
+def split_manga_pages(directory: str, mode: str, no_keep: bool) -> None:
     f"""
     Given a directory, converts the images contained in that directory
     from double page layout to single page layout.
     Arguments:
     directory: str -  The directory containing the image files
     mode: {MODE_HELP}
+    no_keep: bool - If True, do not keep double page spreads when using detect mode
     """
 
     path = pathlib.Path(directory)
@@ -67,6 +71,7 @@ def split_manga_pages(directory: str, mode: str) -> None:
         print(f"Mean width in pixels is {mean} and standard deviation is {std}")
 
     n_split = 0
+    n_delete = 0
     for file in files:
         # get filename without suffix
         filename = file.stem
@@ -93,13 +98,19 @@ def split_manga_pages(directory: str, mode: str) -> None:
 
         cv2.imwrite(str(save_path1), page1)
         cv2.imwrite(str(save_path2), page2)
+        if mode == MODE_DETECT and no_keep:
+            print(f"""Deleting double page spread {str(file)}
+                    since it has been split into single page files and the --no-keep flag was used""")
+            file.unlink()
+            n_delete += 1
+
         n_split += 1
 
     print(f"Done! Split {n_split} double page spreads into {2 * n_split} single page images.")
     if mode == MODE_ALL:
         print(f"Your single page layed-out manga can be found in the directory called split_manga_pages")
     if mode == MODE_DETECT:
-        print(f"The split pages were placed in the same folder as your original manga. No files were deleted.")
+        print(f"The split pages were placed in the same folder as your original manga. {n_delete} files were deleted.")
 
 if __name__== '__main__':
     start = perf_counter()
