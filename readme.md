@@ -5,35 +5,8 @@ to single-page layout. This can make it much easier to read said manga on
 small screens, such as those found on mobile devices
 
 ## Installation
-To install, you can download the newest executable
-version for your operating system from the [Releases](https://github.com/christofferaakre/split_manga_pages/releases) section
-(recommended for non-tech savvy people). Alterantively,
-you can build it from source yourself, following the
-[Build Instructions](#Build-instructions) section below. Or, you can follow the instructions just
-below to download and run the Python script (cross-platform). The advantage of doing this
-is that the executable takes can take 1-2 seconds to start up
-while the Python script starts instantly, and you can also easily modify
-    the script yourself without having to rebuild if you know some
-    Python.
-### Instructions for downloading python script
-**These steps are not requried if you download the executable from Releases or build from source**<br>
-
-0. Make sure you have python installed:
-    1. Open a terminal
-    2. Try to run `python3` and `python`
-    3. If either one of these give you a prompt saying
-    something like `Python 3.8.10 (default, Nov 26 2021....`,
-    then you are good to go
-    4. If not, install Python
-1. Clone repository: `git clone https://github.com/christofferaakre/split_manga_pages.git`
-2. `cd` into directory: `cd split_manga_pages`
-3. Install dependencies: `pip install -r requirements.txt`
-4. Try to run the script: `python3 split_manga_pages.py` (If you are
-on Windows you might need to type `python` instead of `python3`
-5. If you get a message saying something like `usage: split_manga_pages.py [-h] [-d DIRECTORY]`,
-it was installed correctly. Otherwise, you might need to install Python
-or the dependencies
-6. For convenience, put the script somewhere in your system path.
+Install from pypi: `pip install split_manga_pages`
+You can then run the script: `split_manga_pages -h`
 
 ## Usage
 Run the executable from the command line with the appropriate command line arguments
@@ -74,11 +47,3 @@ I run
 `python3 split_manga_pages.py -d manga -m detect`, and now in the `manga` folder
 I will find files
 `page001.png`, `page002.png`, `page002part1.png`, `page002part2.png`, `page003.png`.
-
-## Build instructions
-1. Clone repository and `cd` into it
-2. run `pyinstaller --onefile split-manga-pages.py`
-3. The executable should be placed in the `dist` folder
-
-Note that `pyinstaller` only builds executables for the current
-operating system you are on.

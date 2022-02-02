@@ -6,8 +6,9 @@ import statistics
 import cv2
 from enum import Enum, auto
 from collections import Counter
-from utils import is_double_page_spread
 from time import perf_counter
+
+from split_manga_pages.utils import is_double_page_spread
 
 EXTENSIONS = {'.png', '.jpg', '.jpeg'}
 MODE_ALL = 'all'
