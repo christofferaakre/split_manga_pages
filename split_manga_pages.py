@@ -39,7 +39,6 @@ def main():
         parser.print_usage()
         sys.exit(1)
 
-    print(no_keep)
     split_manga_pages(directory, mode, no_keep)
 
 def split_manga_pages(directory: str, mode: str, no_keep: bool) -> None:
@@ -84,11 +83,11 @@ def split_manga_pages(directory: str, mode: str, no_keep: bool) -> None:
             else:
                 continue
         width_cutoff = width // 2
-        page1 = img[:, :width_cutoff]
-        page2 = img[:, width_cutoff:]
+        page1 = img[:, width_cutoff:]
+        page2 = img[:, :width_cutoff]
 
         filename1 = f'{filename}part1{file.suffix}'
-        filename2 = f'{filename}part12{file.suffix}'
+        filename2 = f'{filename}part2{file.suffix}'
 
         save_path1: pathlib.Path = save_directory / filename1
         save_path2: pathlib.Path = save_directory / filename2
